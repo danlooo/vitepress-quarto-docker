@@ -1,0 +1,47 @@
+---
+title: "Examples"
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| output: false
+
+JuliaCall::julia_setup(JULIA_HOME = "/root/.juliaup/bin")
+reticulate::use_virtualenv("/build/pyenv")
+```
+
+## Bash
+
+```{bash}
+echo hello world
+```
+
+access host docker:
+
+
+```{bash}
+docker ps
+```
+
+## R
+
+```{r}
+a <- 1
+a + 1
+```
+
+## Julia
+
+```{julia}
+using Dates
+using Zarr
+Dates.now()
+```
+
+## Python
+
+```{python}
+import xarray as xr
+print("hello world")
+```

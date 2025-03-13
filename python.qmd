@@ -1,8 +1,0 @@
-# Python
-
-Load xarray
-
-```{python}
-import xarray as xr
-print("hello world")
-```

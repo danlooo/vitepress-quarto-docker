@@ -1,0 +1,7 @@
+.vitepress/cache
+node_modules
+.quarto
+.html
+
+/.quarto/
+/renv
