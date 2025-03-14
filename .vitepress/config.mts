@@ -4,6 +4,13 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "vitepress-quarto-docker",
   description: "Reproducible polyglot documentation",
+  vite: {
+    server: {
+      allowedHosts: [
+        'fairsendd.eodchosting.eu',
+      ],
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
