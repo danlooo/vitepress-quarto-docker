@@ -11,6 +11,11 @@ Writing static websites containing code notebooks in various programming languag
 
 ## Get Started
 
+1. clone this repo
+1. write documentation in directory docs
+1. update environment in directory envs
+1. activate github pages in the repository settings: set to actions
+
 ```{bash}
 git clone https://github.com/danlooo/vitepress-quarto-docker
 cd vitepress-quarto-docker

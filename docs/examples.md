@@ -1,6 +1,12 @@
 # Examples
 
 
+> [!NOTE]
+>
+> You can execute this code in an online interactive Jupyter environment
+> at Binder:
+> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/danlooo/vitepress-quarto-docker/HEAD)
+
 ## Bash
 
 ``` bash
@@ -15,9 +21,9 @@ access host docker:
 docker ps
 ```
 
-    CONTAINER ID   IMAGE                     COMMAND                  CREATED              STATUS              PORTS     NAMES
-    fd9512db98bd   vitepress-quarto-docker   "/bin/bash quarto re…"   58 seconds ago       Up 58 seconds                 relaxed_wu
-    767e2da69e88   vitepress-quarto-docker   "/bin/bash"              About a minute ago   Up About a minute             mystifying_fermi
+    CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS     NAMES
+    74484610319b   vitepress-quarto-docker   "/bin/bash quarto re…"   57 seconds ago   Up 57 seconds             keen_margulis
+    767e2da69e88   vitepress-quarto-docker   "/bin/bash"              29 minutes ago   Up 29 minutes             mystifying_fermi
 
 ## R
 
@@ -36,7 +42,7 @@ using Zarr
 Dates.now()
 ```
 
-    2025-03-14T12:04:14.546
+    2025-03-14T12:32:15.825
 
 ## Python
 

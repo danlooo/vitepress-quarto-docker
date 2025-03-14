@@ -2,6 +2,11 @@
 title: "Examples"
 ---
 
+::: {.callout-note}
+You can execute this code in an online interactive Jupyter environment at Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/danlooo/vitepress-quarto-docker/HEAD)
+:::
+
+
 ```{r}
 #| label: setup
 #| echo: false
