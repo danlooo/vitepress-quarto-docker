@@ -40,9 +40,10 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      - name: Build and push rqa docker image
+      - name: Build docker image
         uses: docker/build-push-action@v6
         with:
+          push: false
           tags: vite-press-quarto-docker
       - name: Render quarto
         run: docker run -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/docs:/work vitepress-quarto-docker quarto render .
