@@ -7,8 +7,8 @@ title: "Examples"
 #| echo: false
 #| output: false
 
-JuliaCall::julia_setup(JULIA_HOME = "/root/.juliaup/bin")
-reticulate::use_virtualenv("/build/pyenv")
+JuliaCall::julia_setup()
+reticulate::use_condaenv("base")
 ```
 
 ## Bash
