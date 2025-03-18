@@ -1,6 +1,7 @@
 # vitepress-quarto-docker: Reproducible polyglot documentation
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/danlooo/vitepress-quarto-docker/HEAD)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://danlooo.github.io/vitepress-quarto-docker)
 
 Writing static websites containing code notebooks in various programming languages.
 
@@ -11,20 +12,22 @@ Writing static websites containing code notebooks in various programming languag
 
 ## Get Started
 
-1. clone this repo
-1. write documentation in directory docs
-1. update environment in directory envs
-1. activate github pages in the repository settings: set to actions
+1. Clone the repository:
 
 ```{bash}
 git clone https://github.com/danlooo/vitepress-quarto-docker
 cd vitepress-quarto-docker
-source run.sh
 ```
 
-## Set code execution environment
+2. Update code, e.g. add quarto files to the docs directory
 
-### R
+3. Deploy locally:
 
-- uses renv
-- https://rstudio.github.io/renv/articles/faq.html#capturing-all-dependencies
+```{bash}
+npm install
+npm run docs:dev
+```
+
+4. Setup GitHub: Set source to GitHub Actions in Pages repo settings
+
+5. pushing changes to GitHuB will automatically render and deploy all quarto websites at https://danlooo.github.io/vitepress-quarto-docker

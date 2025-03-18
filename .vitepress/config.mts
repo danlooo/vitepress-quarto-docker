@@ -5,7 +5,7 @@ export default defineConfig({
   title: "vitepress-quarto-docker",
   description: "Reproducible polyglot documentation",
   srcDir: './docs',
-  base: '/vitepress-quarto-docker/',
+  base: '/vitepress-quarto-docker',
   vite: {
     server: {
       allowedHosts: [
@@ -25,7 +25,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/danlooo/vitepress-quarto-docker' }
     ],
 
     search: {
