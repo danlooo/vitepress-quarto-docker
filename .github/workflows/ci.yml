@@ -48,7 +48,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}
+          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest,  ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.sha }}
+          cache-from: type=registry,ref=${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+          cache-to: type=inline
       - name: Render quarto
         run: |
           docker run \
