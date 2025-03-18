@@ -4,10 +4,11 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "vitepress-quarto-docker",
   description: "Reproducible polyglot documentation",
+  srcDir: './docs',
   vite: {
     server: {
       allowedHosts: [
-        'fairsendd.eodchosting.eu',
+        'danlooo.github.io',
       ],
     }
   },
@@ -15,11 +16,11 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/docs/examples' }
+      { text: 'Examples', link: '/examples' }
     ],
 
     sidebar: [
-       { text: 'Examples', link: '/docs/examples.md' },
+       { text: 'Examples', link: '/examples.md' },
     ],
 
     socialLinks: [
