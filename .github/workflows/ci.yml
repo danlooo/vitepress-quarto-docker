@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: s-weigand/trigger-mybinder-build@v1
         with:
-          target-repo: ${{ github.event.repository.full_name}}
+          target-repo: ${{ github.event.repository.full_name}}/HEAD
   build:
     runs-on: ubuntu-latest
     steps:
