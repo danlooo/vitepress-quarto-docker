@@ -24,6 +24,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  build-binder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: s-weigand/trigger-mybinder-build@v1
+        with:
+          target-repo: ${{ github.event.repository.full_name}}
   build:
     runs-on: ubuntu-latest
     steps:
