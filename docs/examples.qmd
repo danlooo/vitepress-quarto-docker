@@ -1,5 +1,6 @@
 ---
 title: "Examples"
+engine: knitr
 ---
 
 ::: {.callout-note}
@@ -12,28 +13,8 @@ You can execute this code in an online interactive Jupyter environment at Binder
 #| echo: false
 #| output: false
 
-JuliaCall::julia_setup()
-reticulate::use_condaenv("base")
-```
-
-## Bash
-
-```{bash}
-echo hello world
-```
-
-access host docker:
-
-
-```{bash}
-docker ps
-```
-
-## R
-
-```{r}
-a <- 1
-a + 1
+JuliaCall::julia_setup("/usr/local/bin")
+#reticulate::use_condaenv("base")
 ```
 
 ## Julia
@@ -44,9 +25,17 @@ using Zarr
 Dates.now()
 ```
 
-## Python
+```{julia}
+Base.active_project()
+```
 
-```{python}
-import xarray as xr
-print("hello world")
+```{julia}
+using Pkg
+Pkg.status()
+Pkg.build("GDAL")
+```
+
+```{julia}
+#| label: test-gdal
+using GDAL
 ```
