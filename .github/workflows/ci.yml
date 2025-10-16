@@ -39,15 +39,17 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest,  ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.sha }}
-          cache-from: type=registry,ref=${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: |
+            ghcr.io/${{ github.actor}}/${{ github.event.repository.name }}:latest
+            ghcr.io/${{ github.actor}}/${{ github.event.repository.name }}:${{ github.sha }}
+          cache-from: type=registry,ref=${{ github.actor}}/${{ github.event.repository.name }}:latest
           cache-to: type=inline
       - name: Render quarto
         run: |
           docker run \
             -v /var/run/docker.sock:/var/run/docker.sock \
             -v $PWD/docs:/work  \
-            ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }} \
+            ${{ github.actor}}/${{ github.event.repository.name }} \
             quarto render .
       - name: Setup Node
         uses: actions/setup-node@v4
