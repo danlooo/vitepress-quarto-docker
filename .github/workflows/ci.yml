@@ -11,6 +11,9 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: false
+env:
+  CONTAINER_REGISTRY: ghcr.io
+  CONTAINER_IMAGE: ${{ CONTAINER_REGISTRY }}/${{ github.actor}}/${{ github.event.repository.name }}
 jobs:
   build-binder:
     runs-on: ubuntu-latest
@@ -28,7 +31,7 @@ jobs:
       - name: Log in to Docker Registry
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
+          registry: ${{ CONTAINER_REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Docker Buildx
@@ -40,8 +43,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/${{ github.actor}}/${{ github.event.repository.name }}:latest
-            ghcr.io/${{ github.actor}}/${{ github.event.repository.name }}:${{ github.sha }}
+            ${{ CONTAINER_IMAGE }}:latest
+            ${{ CONTAINER_IMAGE }}:${{ github.sha }}
           cache-from: type=registry,ref=${{ github.actor}}/${{ github.event.repository.name }}:latest
           cache-to: type=inline
       - name: Render quarto
@@ -49,7 +52,7 @@ jobs:
           docker run \
             -v /var/run/docker.sock:/var/run/docker.sock \
             -v $PWD/docs:/work  \
-            ${{ github.actor}}/${{ github.event.repository.name }} \
+             ${{CONTAINER_IMAGE}} \
             quarto render .
       - name: Setup Node
         uses: actions/setup-node@v4
